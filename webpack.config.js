@@ -1,41 +1,52 @@
 module.exports = {
-  entry: './src/index.js',
+  entry: "./src/index.js",
   module: {
     rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: [
-          {
-            loader: 'babel-loader',
-            query: {
-              presets: [ '@babel/preset-env' ],
-            },
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: [
+              [
+                "@babel/preset-env",
+                {
+                  targets: {
+                    esmodules: true,
+                  },
+                },
+              ],
+            ],
           },
-        ]
+        },
       },
       {
-        test: /\.css$/,
+        test: [/\.s[ac]ss$/i, /\.css$/i],
         use: [
-          'style-loader',
-          'css-loader'
-        ]
+          // Creates `style` nodes from JS strings
+          "style-loader",
+          // Translates CSS into CommonJS
+          "css-loader",
+          // Compiles Sass to CSS
+          "sass-loader",
+        ],
       },
       {
         test: /\.(svg)$/,
         use: [
           {
-            loader: 'raw-loader',
-          }
-        ]
-      }
-    ]
+            loader: "raw-loader",
+          },
+        ],
+      },
+    ],
   },
   output: {
-    path: __dirname + '/dist',
-    publicPath: '/',
-    filename: 'bundle.js',
-    library: 'Header',
-    libraryTarget: 'umd'
-  }
+    path: __dirname + "/dist",
+    publicPath: "/",
+    filename: "bundle.js",
+    library: "Header",
+    libraryTarget: "umd",
+  },
 };
