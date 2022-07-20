@@ -1,8 +1,10 @@
 # Heading Tool
 
 ![Version of EditorJS that the plugin is compatible with](https://badgen.net/badge/Editor.js/v2.0/blue)
+&#x2011;
+![Version of TaleSmith that the plugin is compatible with](https://badgen.net/badge/TaleSmith/v0.0.1/B51F3E)
 
-Provides Headings Blocks for the [Editor.js](https://ifmo.su/editor).
+Provides Headings Blocks for the [Editor.js](https://ifmo.su/editor) used in the software TaleSmith by [The Tales Guild](https://thetalesguild.com).
 
 ## Installation
 
@@ -11,31 +13,19 @@ Provides Headings Blocks for the [Editor.js](https://ifmo.su/editor).
 Get the package
 
 ```shell
-npm i --save @editorjs/header
+npm i --save @thetalesguild/editorjs-header
 ```
 
 Include module at your application
 
 ```javascript
-const Header = require('@editorjs/header');
+const Header = require("@thetalesguild/editorjs-header");
 ```
 
 ### Download to your project's source dir
 
 1. Upload folder `dist` from repository
 2. Add `dist/bundle.js` file to your page.
-
-### Load from CDN
-
-You can load specific version of package from [jsDelivr CDN](https://www.jsdelivr.com/package/npm/@editorjs/header).
-
-`https://cdn.jsdelivr.net/npm/@editorjs/header@latest`
-
-Then require this script on page with Editor.js.
-
-```html
-<script src="..."></script>
-```
 
 ## Usage
 
@@ -106,8 +96,6 @@ var editor = EditorJS({
 
 ## Tool's settings
 
-![An image showing the header block tool](https://capella.pics/634ad545-08d7-4cb7-8409-f01289e0e5e1.jpg)
-
 You can select one of six levels for heading.
 
 ## Output data
@@ -121,7 +109,7 @@ You can select one of six levels for heading.
 {
   "type": "header",
   "data": {
-    "text": "Why Telegram is the best messenger",
+    "text": "Welcome to TaleSmith !",
     "level": 2
   }
 }
